@@ -1,8 +1,7 @@
 function drawSunrise() {
-    var stern = document.getElementById('stern').getContext('2d');
     var cabin = document.getElementById('stern');
-    cabin.style.opacity = "0";
-    stern.fillStyle = "rgba(255,234,76)";
+    var stern = cabin.getContext('2d');
+    stern.fillStyle = "#ff3";
     stern.beginPath();
     stern.moveTo(400, 200);
     stern.lineTo(400, 300);
@@ -31,15 +30,14 @@ function drawSunrise() {
     stern.lineTo(575, 50);
     stern.closePath();
     stern.fill();
-    var time = 0;
-    var opacity = 0;
-    while (time < 1000) {
-        time += 100;
-        setTimeout(function(){cabin.style.opacity = opacity; opacity += 0.1}, time);
-    }
 }
 
-function drawWindows() {
-    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>As you watch, the sun rises, revealing... a cabin on a ship?</p>";}, 2000);
-    setTimeout(drawSunrise, 2500);
+function intro() {
+    drawSunrise()
+    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>Your head is throbbing...</p>";}, 1000);
+    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>You can hear waves, somewhere...</p>";}, 3000);
+    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>You open your eyes, but it doesn't make a difference; there's no light.</p>";}, 4000);
+    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>You take short breaths through your nose. Your mouth is dry.</p>";}, 7000);
+    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>Is this what it is to be dead?</p>";}, 10000);
+    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>After what feels like untold ages, the sun rises, revealing... a ship's cabin?</p>";}, 16000);
 }
