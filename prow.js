@@ -1,6 +1,8 @@
 function drawSunrise() {
     var prow = document.getElementById('prow').getContext('2d');
-    prow.fillStyle = "rgba(255,234,76,0)";
+    var helm = document.getElementById('prow');
+    helm.style.opacity = "0";
+    prow.fillStyle = "rgba(255,234,76)";
     prow.beginPath();
     prow.moveTo(400, 300);
     prow.lineTo(400, 500);
@@ -29,14 +31,15 @@ function drawSunrise() {
     prow.lineTo(575, 50);
     prow.closePath();
     prow.fill();
-    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.2)";}, 200);
-    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.4)";}, 400);
-    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.6)";}, 600);
-    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.8)";}, 800);
-    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,1.0)";}, 1000);
+    var time = 0
+    var opacity = 0
+    while (time < 1000) {
+        time += 100
+        setTimeout(function(){helm.style.opacity = opacity;opacity += 0.1}, time);
+    }
 }
 
 function drawWindows() {
     setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>As you watch, the sun rises, revealing... the bridge of a ship?</p>";}, 2000);
-    setTimeout(drawSunrise, 500);
+    setTimeout(drawSunrise, 2500);
 }
