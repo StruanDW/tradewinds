@@ -1,4 +1,3 @@
 # tradewinds
 An idle game in development.
-
-pouncysilverkitten.github.io/tradewinds to play.
+[Go here](https://pouncysilverkitten.github.io/tradewinds) to play.
