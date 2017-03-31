@@ -31,11 +31,11 @@ function drawSunrise() {
     prow.lineTo(575, 50);
     prow.closePath();
     prow.fill();
-    setTimeout(functino(){prow.fillStyle = "rgba(255,255,255,0.2)";}, 200);
-    setTimeout(functino(){prow.fillStyle = "rgba(255,255,255,0.4)";}, 400);
-    setTimeout(functino(){prow.fillStyle = "rgba(255,255,255,0.6)";}, 600);
-    setTimeout(functino(){prow.fillStyle = "rgba(255,255,255,0.8)";}, 800);
-    setTimeout(functino(){prow.fillStyle = "rgba(255,255,255,1)";}, 1000);
+    setTimeout(function(){prow.fillStyle = "rgba(255,255,255,0.2)";}, 200);
+    setTimeout(function(){prow.fillStyle = "rgba(255,255,255,0.4)";}, 400);
+    setTimeout(function(){prow.fillStyle = "rgba(255,255,255,0.6)";}, 600);
+    setTimeout(function(){prow.fillStyle = "rgba(255,255,255,0.8)";}, 800);
+    setTimeout(function(){prow.fillStyle = "rgba(255,255,255,1)";}, 1000);
 
 function drawWindows() {
     setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>As you watch, the sun rises, revealing... the bridge of a ship?</p>";}, 2000);
