@@ -29,9 +29,9 @@ function drawSunrise() {
     prow.lineTo(575, 50);
     prow.closePath();
     prow.fill();
-    //setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.2)";}, 200);
-    //setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.4)";}, 400);
-    //setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.6)";}, 600);
+    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.2)";}, 200);
+    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.4)";}, 400);
+    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.6)";}, 600);
     //setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.8)";}, 800);
     //setTimeout(function(){prow.fillStyle = "rgba(255,234,76,1)";}, 1000);
 }
