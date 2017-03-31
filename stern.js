@@ -31,7 +31,8 @@ function drawSunrise() {
     stern.closePath();
     stern.fill();
     stern.fillStyle="#FFF";
-    stern.font="40px " + stern.font.split(' ')[1];
+    console.log(stern.font)
+    stern.font="40px " + stern.font.split(' ')[stern.font.length - 1];
     stern.fillText("Tradewinds", 320, 190);
 }
 
