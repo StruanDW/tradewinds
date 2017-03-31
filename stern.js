@@ -1,7 +1,7 @@
 function drawSunrise() {
     var cabin = document.getElementById('stern');
     var stern = cabin.getContext('2d');
-    stern.fillStyle = "#ff3";
+    stern.fillStyle = "#fc1";
     stern.beginPath();
     stern.moveTo(400, 200);
     stern.lineTo(400, 300);
@@ -30,6 +30,9 @@ function drawSunrise() {
     stern.lineTo(575, 50);
     stern.closePath();
     stern.fill();
+    stern.fillStyle="#FFF";
+    stern.font="40px Open Sans";
+    stern.fillText("Tradewinds", 320, 190);
 }
 
 function intro() {
