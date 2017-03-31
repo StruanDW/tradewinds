@@ -34,6 +34,7 @@ function drawSunrise() {
     setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.6)";}, 600);
     setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.8)";}, 800);
     setTimeout(function(){prow.fillStyle = "rgba(255,234,76,1)";}, 1000);
+}
 
 function drawWindows() {
     setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>As you watch, the sun rises, revealing... the bridge of a ship?</p>";}, 2000);
