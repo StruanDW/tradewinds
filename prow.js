@@ -1,6 +1,6 @@
 function drawSunrise() {
     var prow = document.getElementById('prow').getContext('2d');
-    prow.fillStyle = "rgba(255,234,76,255)";
+    prow.fillStyle = "rgba(255,234,76,0)";
     prow.beginPath();
     prow.moveTo(400, 300);
     prow.lineTo(400, 500);
@@ -32,8 +32,8 @@ function drawSunrise() {
     setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.2)";}, 200);
     setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.4)";}, 400);
     setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.6)";}, 600);
-    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,255)";}, 800);
-    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,255)";}, 1000);
+    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,0.8)";}, 800);
+    setTimeout(function(){prow.fillStyle = "rgba(255,234,76,1.0)";}, 1000);
 }
 
 function drawWindows() {
