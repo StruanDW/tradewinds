@@ -39,6 +39,6 @@ function drawSunrise() {
 }
 
 function drawWindows() {
-    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>As you watch, the sun rises, revealing... the bridge of a ship?</p>";}, 2000)
+    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>As you watch, the sun rises, revealing... the bridge of a ship?</p>";}, 2000);
     setTimeout(drawSunrise, 500);
 }
