@@ -1,12 +1,21 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="global.css" />
+    <script src="prow.js"></script>
   </head>
 
-  <body>
+  <body onload="drawWindows();">
 
     <div id="dialogBox">
-      <p class="dialogHeader">Tradewinds</p>
+      <p id="dialogHeader">Tradewinds</p>
+      <p>You awake to darkness, your mouth dry. Your head pounds. You grope for water, but cannot find any, and slump back...</p>
+    </div>
+
+    <div class="main">
+
+      <div class="helm">
+        <canvas id="prow" width="800" height="600"></canvas>
+      </div>
     </div>
   </body>
 </html>
