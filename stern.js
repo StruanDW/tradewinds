@@ -35,6 +35,12 @@ function drawSunrise() {
     stern.fillText("Tradewinds", 320, 190);
 }
 
+function drawDoor() {
+    var cabin = document.getElementById('stern');
+    var stern = cabin.getContext('2d');
+
+}
+
 function addButton(func, id, text) {
     controls = document.getElementById('controls');
     var button = document.createElement("a");
@@ -64,7 +70,8 @@ function standUp() {
     document.getElementById('controls').removeChild(button);
     setTimeout(function(){addDialogue("The cabin is decorated well, if spartanly. You feel the floor rocking below you as you look around, though that might be your head.");}, 1000);
     setTimeout(function(){addDialogue("Set into the wall next to you is a wood-panelled door.");}, 2000);
-    setTimeout(function(){addButton('openDoor()', 'openDoorButton', 'Open Door');}, 2000);
+    setTimeout(function(){drawDoor();}, 2000);
+    setTimeout(function(){addButton('openDoor()', 'openDoorButton', 'Open Door');}, 3000);
 }
 
 function openDoor() {
