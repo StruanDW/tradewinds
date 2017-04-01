@@ -31,9 +31,21 @@ function drawSunrise() {
     stern.closePath();
     stern.fill();
     stern.fillStyle="#FFF";
-    console.log(stern.font)
     stern.font="40px " + stern.font.split(' ')[stern.font.length - 1];
     stern.fillText("Tradewinds", 320, 190);
+}
+
+function offerStand() {
+    controls = document.getElementById('controls');
+    controls.innerHTML += "<a href='#' class='button' onclick='standUp()'>Stand</span>";
+}
+
+function standUp() {
+    var cabin = document.getElementById('stern');
+    var stern = cabin.getContext('2d');
+    stern.clearRect(320, 160, 300, 40);
+    document.getElementById('dialogHeader').innerHTML = "Tradewinds"
+    document.getElementById('dialogBox').innerHTML += "<p>You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.</p>"
 }
 
 function intro() {
@@ -44,4 +56,5 @@ function intro() {
     setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>You take short breaths through your nose. Your mouth is dry.</p>";}, 7000);
     setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>Is this what it is to be dead?</p>";}, 10000);
     setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p>After what feels like untold ages, the sun rises, revealing... a ship's cabin?</p>";}, 16000);
+    setTimeout(function(){offerStand();}, 24000);
 }
