@@ -6,6 +6,10 @@ html, body {
     overflow: hidden;
 }
 
+canvas {
+    z-index: 1;
+}
+
 body {
     background-color: black;
 }
@@ -31,7 +35,6 @@ body {
 #controls {
     height: 10%;
     border-top: 1px solid #333;
-    z-index: 2;
 }
 
 .button {
@@ -45,6 +48,7 @@ body {
     border: 3px solid white;
     -webkit-animation: buttonFadeIn 0.5s ease;
     animation: buttonFadeIn 0.5s ease;
+    z-index: 2;
 }
 
 @keyframes buttonFadeIn{
