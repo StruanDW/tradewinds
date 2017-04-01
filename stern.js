@@ -39,12 +39,15 @@ function drawSunrise() {
 
 function offerStand() {
     controls = document.getElementById('controls');
-    controls.innerHTML += "<a href='#' class='button' id='standButton' onclick='standUp()'>Stand</span>";
+    controls.innerHTML += "<a href='javascript:standUp()' class='button' id='standButton' onclick='standUp()'>Stand</span>";
 }
 
 function addDialogue(dialogue) {
-    dialogue = "<p class='dialogue'>" + dialogue + "</p>";
-    document.getElementById('dialogBox').innerHTML += dialogue;
+    var entry = document.createElement("p");
+    entry.textContent = dialogue;
+    entry.classList.add('dialogue');
+    dialogueBox = document.getElementById('dialogueBox');
+    dialogueBox.appendChild(entry);
 }
 
 function standUp() {
@@ -52,7 +55,7 @@ function standUp() {
         var cabin = document.getElementById('stern');
         var stern = cabin.getContext('2d');
         stern.clearRect(320, 160, 300, 40);
-        document.getElementById('dialogHeader').innerHTML = "Tradewinds";
+        document.getElementById('dialogueHeader').textContent = "Tradewinds";
         addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
         Standing = true;
         var controls = document.getElementById('controls');
