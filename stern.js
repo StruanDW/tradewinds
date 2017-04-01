@@ -60,17 +60,19 @@ function standUp() {
     stern.clearRect(320, 160, 300, 40);
     document.getElementById('dialogueHeader').textContent = "Tradewinds";
     addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
-    document.getElementById('standButton').remove();
+    var button = document.getElementById('standUpButton')
+    document.getElementById('controls').removeChild(button);
     setTimeout(function(){addDialogue("The cabin is decorated well, if spartanly. You feel the floor rocking below you as you look around, though that might be your head.");}, 1000);
     setTimeout(function(){addDialogue("Set into the wall next to you is a wood-panelled door.");}, 2000);
     setTimeout(function(){addButton('openDoor()', 'openDoorButton', 'Open Door');}, 2000);
 }
 
 function openDoor() {
-    var standButton = document.getElementById('openDoorButton');
-    controls.removeChild(standButton);
+    var button = document.getElementById('openDoorButton')
+    document.getElementById('controls').removeChild(button);
     addDialogue("The door opens easily, revealing a dark corridor. You step through, cautiously.");
-    setTimeout(function(){addDialogue("The cabin is decorated well, if spartanly. You feel the floor rocking below you as you look around, though that might be your head.");}, 1000);
+    setTimeout(function(){addDialogue("There is a ladder leading upwards towards a square of light. The rest of the corridor is shrouded in darkness.");}, 1000);
+    setTimeout(function(){addButton('climbLadder()', 'climbLadderButton', 'Climb');}, 1000);
 
 }
 
