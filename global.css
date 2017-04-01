@@ -8,6 +8,7 @@ html, body {
 
 canvas {
     z-index: 1;
+    position: fixed;
 }
 
 body {
@@ -29,12 +30,12 @@ body {
 #main {
     width: 100%;
     height: 90%;
-
 }
 
 #controls {
     height: 10%;
     border-top: 1px solid #333;
+    position: relative;
     z-index: 2;
 }
 
@@ -49,6 +50,7 @@ body {
     border: 3px solid white;
     -webkit-animation: buttonFadeIn 0.5s ease;
     animation: buttonFadeIn 0.5s ease;
+    position: relative;
     z-index: 3;
 }
 
