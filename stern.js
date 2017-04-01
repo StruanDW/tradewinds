@@ -42,16 +42,8 @@ function addButton(func, id, text) {
     button.classList.add('button');
     button.setAttribute('id', id);
     button.setAttribute('href', 'javascript:' + func);
-    button.setAttribute('onclick', func);
+    //button.setAttribute('onclick', func);
     controls.appendChild(button);
-}
-
-function offerStand() {
-    addButton('standUp()', 'standButton', 'Stand');
-}
-
-function offerOpenDoor() {
-    addButton('openDoor()', 'openDoorButton', 'Open Door');
 }
 
 function addDialogue(dialogue) {
@@ -68,13 +60,10 @@ function standUp() {
     stern.clearRect(320, 160, 300, 40);
     document.getElementById('dialogueHeader').textContent = "Tradewinds";
     addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
-    Standing = true;
-    var controls = document.getElementById('controls');
-    var standButton = document.getElementById('standButton');
-    controls.removeChild(standButton)
+    document.getElementById('standButton').remove();
     setTimeout(function(){addDialogue("The cabin is decorated well, if spartanly. You feel the floor rocking below you as you look around, though that might be your head.");}, 1000);
     setTimeout(function(){addDialogue("Set into the wall next to you is a wood-panelled door.");}, 2000);
-    setTimeout(function(){offerOpenDoor();}, 2000);
+    setTimeout(function(){addButton('openDoor()', 'openDoorButton', 'Open Door');}, 2000);
 }
 
 function openDoor() {
@@ -93,5 +82,5 @@ function intro() {
     setTimeout(function(){addDialogue("You take short breaths through your nose. Your mouth is dry.");}, 7000);
     setTimeout(function(){addDialogue("Is this what it is like to be dead?");}, 10000);
     setTimeout(function(){addDialogue("After what feels like untold ages, the sun rises, revealing... a ship's cabin?");}, 16000);
-    setTimeout(function(){offerStand();}, 24000);
+    setTimeout(function(){addButton('standUp()', 'standUpButton', 'Stand');}, 20000);
 }
