@@ -57,18 +57,18 @@ function standUp() {
         Standing = true;
         var controls = document.getElementById('controls');
         var standButton = document.getElementById('standButton');
-        controls.removeChild(standButton);
+        controls.removeChild(standButton)
 
     }
 }
 
 function intro() {
     drawSunrise()
-    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p class='dialogue'>Your head is throbbing...</p>";}, 1000);
-    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p class='dialogue'>You can hear waves, somewhere...</p>";}, 3000);
-    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p class='dialogue'>You open your eyes, but it doesn't make a difference; there's no light.</p>";}, 4000);
-    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p class='dialogue'>You take short breaths through your nose. Your mouth is dry.</p>";}, 7000);
-    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p class='dialogue'>Is this what it is like to be dead?</p>";}, 10000);
-    setTimeout(function(){document.getElementById('dialogBox').innerHTML += "<p class='dialogue'>After what feels like untold ages, the sun rises, revealing... a ship's cabin?</p>";}, 16000);
+    setTimeout(function(){addDialogue("Your head is throbbing...");}, 1000);
+    setTimeout(function(){addDialogue("You can hear waves, somewhere...");}, 3000);
+    setTimeout(function(){addDialogue("You open your eyes, but it doesn't make a difference; there's no light.");}, 4000);
+    setTimeout(function(){addDialogue("You take short breaths through your nose. Your mouth is dry.");}, 7000);
+    setTimeout(function(){addDialogue("Is this what it is like to be dead?");}, 10000);
+    setTimeout(function(){addDialogue("After what feels like untold ages, the sun rises, revealing... a ship's cabin?");}, 16000);
     setTimeout(function(){offerStand();}, 24000);
 }
