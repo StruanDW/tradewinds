@@ -22,7 +22,7 @@ body {
 
 #controls {
     height: 10%;
-    background-color: green;
+    border-top: 1px solid #333;
 }
 
 .button {
