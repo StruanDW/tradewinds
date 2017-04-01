@@ -38,12 +38,6 @@ function drawSunrise() {
     stern.fillText("Tradewinds", 320, 190);
 }
 
-function drawDoor() {
-    var cabin = document.getElementById('stern');
-    var stern = cabin.getContext('2d');
-
-}
-
 function addButton(func, id, text) {
     controls = document.getElementById('controls');
     var button = document.createElement("a");
@@ -51,8 +45,15 @@ function addButton(func, id, text) {
     button.classList.add('button');
     button.setAttribute('id', id);
     button.setAttribute('href', 'javascript:' + func);
-    //button.setAttribute('onclick', func);
     controls.appendChild(button);
+    var button = document.getElementById(id);
+    setTimeout(function(){button.style.opacity = 1;}, 1000);
+}
+
+function removeButton(id) {
+    var button = document.getElementById(id);
+    button.style.opacity = 0;
+    setTimeout(function(){document.getElementById('controls').removeChild(button);}, 1000);
 }
 
 function addDialogue(dialogue) {
@@ -69,8 +70,7 @@ function standUp() {
     stern.clearRect(320, 160, 300, 40);
     document.getElementById('dialogueHeader').textContent = "Tradewinds";
     addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
-    var button = document.getElementById('standUpButton')
-    document.getElementById('controls').removeChild(button);
+    removeButton('standUpButton');
     setTimeout(function(){addDialogue("The cabin is decorated well, if spartanly. You feel the floor rocking below you as you look around, though that might be your head.");}, 1000);
     setTimeout(function(){addDialogue("Set into the wall next to you is a wood-panelled door.");}, 2000);
     setTimeout(function(){drawDoor();}, 2000);
@@ -78,8 +78,7 @@ function standUp() {
 }
 
 function openDoor() {
-    var button = document.getElementById('openDoorButton')
-    document.getElementById('controls').removeChild(button);
+    removeButton('openDoorButton');
     addDialogue("The door opens easily, revealing a dark corridor. You step through, cautiously.");
     setTimeout(function(){addDialogue("There is a ladder leading upwards towards a square of light. The rest of the corridor is shrouded in darkness.");}, 1000);
     setTimeout(function(){addButton('climbLadder()', 'climbLadderButton', 'Climb');}, 1000);

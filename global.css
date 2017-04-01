@@ -48,8 +48,8 @@ body {
     font-size: 20px;
     margin: 4px 2px;
     border: 3px solid white;
-    -webkit-animation: buttonFadeIn 0.5s ease;
-    animation: buttonFadeIn 0.5s ease;
+    opacity: 0;
+    transition: opacity 1s ease;
     position: relative;
     z-index: 3;
 }
