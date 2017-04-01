@@ -34,6 +34,18 @@ body {
     font-size: 20px;
     margin: 4px 2px;
     border: 3px solid white;
+    -webkit-animation: buttonFadeIn 0.5s ease;
+    animation: buttonFadeIn 0.5s ease;
+}
+
+@keyframes buttonFadeIn{
+0% { opacity:0; }
+100% { opacity:1; }
+}
+
+@-webkit-keyframes buttonFadeIn{
+0% { opacity:0; }
+100% { opacity:1; }
 }
 
 #captainsCabin {
@@ -74,4 +86,3 @@ animation: dialogueFadeIn 1s ease;
 @-webkit-keyframes dialogueFadeIn{
     0% { opacity:0; }
     100% { opacity:1; }
-}
