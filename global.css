@@ -2,7 +2,7 @@ body {
     background-color: black;
 }
 
-#dialogBox {
+#dialogueBox {
     background-color: #333;
     left: 0px;
     width: 20%;
@@ -10,7 +10,7 @@ body {
     color: #FFF;
     float: left;
 }
-#dialogHeader {
+#dialogueHeader {
     font-size: 30px;
 }
 
@@ -61,7 +61,7 @@ body {
     100% { opacity:1; }
 }
 
-#dialogue {
+.dialogue {
 -webkit-animation: dialogueFadeIn 1s ease;
 animation: dialogueFadeIn 1s ease;
 }
