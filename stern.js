@@ -1,3 +1,6 @@
+var timeouts = []
+var Skipped = false;
+
 function drawSunrise() {
     var cabin = document.getElementById('stern');
     var stern = cabin.getContext('2d');
@@ -80,16 +83,25 @@ function openDoor() {
     addDialogue("The door opens easily, revealing a dark corridor. You step through, cautiously.");
     setTimeout(function(){addDialogue("There is a ladder leading upwards towards a square of light. The rest of the corridor is shrouded in darkness.");}, 1000);
     setTimeout(function(){addButton('climbLadder()', 'climbLadderButton', 'Climb');}, 1000);
-
 }
 
 function intro() {
     drawSunrise()
-    setTimeout(function(){addDialogue("Your head is throbbing...");}, 1000);
-    setTimeout(function(){addDialogue("You can hear waves, somewhere...");}, 3000);
-    setTimeout(function(){addDialogue("You open your eyes, but it doesn't make a difference; there's no light.");}, 4000);
-    setTimeout(function(){addDialogue("You take short breaths through your nose. Your mouth is dry.");}, 7000);
-    setTimeout(function(){addDialogue("Is this what it is like to be dead?");}, 10000);
-    setTimeout(function(){addDialogue("After what feels like untold ages, the sun rises, revealing... a ship's cabin?");}, 16000);
-    setTimeout(function(){addButton('standUp()', 'standUpButton', 'Stand');}, 20000);
+    timeouts.push(setTimeout(function(){addDialogue("Your head is throbbing...");}, 1000));
+    timeouts.push(setTimeout(function(){addDialogue("You can hear waves, somewhere...");}, 3000));
+    timeouts.push(setTimeout(function(){addDialogue("You open your eyes, but it doesn't make a difference; there's no light.");}, 4000));
+    timeouts.push(setTimeout(function(){addDialogue("You take short breaths through your nose. Your mouth is dry.");}, 7000));
+    timeouts.push(setTimeout(function(){addDialogue("Is this what it is like to be dead?");}, 10000));
+    timeouts.push(setTimeout(function(){addDialogue("After what feels like untold ages, the sun rises, revealing... a ship's cabin?");}, 16000));
+    timeouts.push(setTimeout(function(){addButton('standUp()', 'standUpButton', 'Stand');}, 20000));
+}
+
+function skipIntro() {
+    if (!Skipped) {
+        for (i = 0; i < timeouts.length; i++) {
+            clearTimeout(timeouts[i]);
+        }
+        addButton('standUp()', 'standUpButton', 'Stand');
+        Skipped = true;
+    }
 }
