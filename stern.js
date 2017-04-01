@@ -1,5 +1,3 @@
-var Standing = false;
-
 function drawSunrise() {
     var cabin = document.getElementById('stern');
     var stern = cabin.getContext('2d');
@@ -37,9 +35,23 @@ function drawSunrise() {
     stern.fillText("Tradewinds", 320, 190);
 }
 
-function offerStand() {
+function addButton(func, id, text) {
     controls = document.getElementById('controls');
-    controls.innerHTML += "<a href='javascript:standUp()' class='button' id='standButton' onclick='standUp()'>Stand</span>";
+    var button = document.createElement("a");
+    button.textContent = text;
+    button.classList.add('button');
+    button.setAttribute('id', id);
+    button.setAttribute('href', 'javascript:' + func);
+    button.setAttribute('onclick', func);
+    controls.appendChild(button);
+}
+
+function offerStand() {
+    addButton('standUp()', 'standButton', 'Stand');
+}
+
+function offerOpenDoor() {
+    addButton('openDoor()', 'openDoorButton', 'Open Door');
 }
 
 function addDialogue(dialogue) {
@@ -51,18 +63,26 @@ function addDialogue(dialogue) {
 }
 
 function standUp() {
-    if (!Standing) {
-        var cabin = document.getElementById('stern');
-        var stern = cabin.getContext('2d');
-        stern.clearRect(320, 160, 300, 40);
-        document.getElementById('dialogueHeader').textContent = "Tradewinds";
-        addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
-        Standing = true;
-        var controls = document.getElementById('controls');
-        var standButton = document.getElementById('standButton');
-        controls.removeChild(standButton)
+    var cabin = document.getElementById('stern');
+    var stern = cabin.getContext('2d');
+    stern.clearRect(320, 160, 300, 40);
+    document.getElementById('dialogueHeader').textContent = "Tradewinds";
+    addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
+    Standing = true;
+    var controls = document.getElementById('controls');
+    var standButton = document.getElementById('standButton');
+    controls.removeChild(standButton)
+    setTimeout(function(){addDialogue("The cabin is decorated well, if spartanly. You feel the floor rocking below you as you look around, though that might be your head.");}, 1000);
+    setTimeout(function(){addDialogue("Set into the wall next to you is a wood-panelled door.");}, 2000);
+    setTimeout(function(){offerOpenDoor();}, 2000);
+}
 
-    }
+function openDoor() {
+    var standButton = document.getElementById('openDoorButton');
+    controls.removeChild(standButton);
+    addDialogue("The door opens easily, revealing a dark corridor. You step through, cautiously.");
+    setTimeout(function(){addDialogue("The cabin is decorated well, if spartanly. You feel the floor rocking below you as you look around, though that might be your head.");}, 1000);
+
 }
 
 function intro() {
