@@ -45,18 +45,33 @@ body {
 #stern {
     width: 80%;
     height: auto;
-    -webkit-animation: 20s ease 0s normal forwards 1 fadein;
-    animation: 24s ease 0s normal forwards 1 fadein;
+    -webkit-animation: 24s ease 0s normal forwards 1 sunrise;
+    animation: 24s ease 0s normal forwards 1 sunrise;
 }
 
-@keyframes fadein{
+@keyframes sunrise{
     0% { opacity:0; }
     66% { opacity:0; }
     100% { opacity:1; }
 }
 
-@-webkit-keyframes fadein{
+@-webkit-keyframes sunrise{
     0% { opacity:0; }
     66% { opacity:0; }
+    100% { opacity:1; }
+}
+
+#dialogue {
+-webkit-animation: dialogueFadeIn 1s ease;
+animation: dialogueFadeIn 1s ease;
+}
+
+@keyframes dialogueFadeIn{
+    0% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes dialogueFadeIn{
+    0% { opacity:0; }
     100% { opacity:1; }
 }
