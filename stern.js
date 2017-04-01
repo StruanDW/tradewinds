@@ -39,7 +39,7 @@ function drawSunrise() {
 
 function offerStand() {
     controls = document.getElementById('controls');
-    controls.innerHTML += "<a href='#' class='button' id='standButton' onclick='standUp()'>Stand</span>";
+    controls.innerHTML += "<a href='javascript:standUp()' class='button' id='standButton' onclick='standUp()'>Stand</span>";
 }
 
 function addDialogue(dialogue) {
