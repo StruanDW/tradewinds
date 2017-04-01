@@ -55,7 +55,7 @@ function standUp() {
         var cabin = document.getElementById('stern');
         var stern = cabin.getContext('2d');
         stern.clearRect(320, 160, 300, 40);
-        document.getElementById('dialogueHeader').innerContent = "Tradewinds";
+        document.getElementById('dialogueHeader').textContent = "Tradewinds";
         addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
         Standing = true;
         var controls = document.getElementById('controls');
