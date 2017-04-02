@@ -33,9 +33,6 @@ function drawSunrise() {
     stern.lineTo(575, 50);
     stern.closePath();
     stern.fill();
-    stern.fillStyle="#FFF";
-    stern.font="40px " + stern.font.split(' ')[stern.font.length - 1];
-    stern.fillText("Tradewinds", 320, 190);
 }
 
 function addButton(func, id, text) {
@@ -64,10 +61,43 @@ function addDialogue(dialogue) {
     dialogueBox.appendChild(entry);
 }
 
+function drawDoor() {
+    var cabin = document.getElementById('captainsCabin');
+    cabin.removeChild(document.getElementById('stern'));
+    var door = document.createElement("canvas");
+    door.setAttribute('id','door');
+    door.setAttribute('width', '800');
+    door.setAttribute('height', '600');
+    cabin.appendChild(door);
+    var gradient = document.createElement("div");
+    gradient.classList.add('fadeToBottom');
+    gradient.setAttribute('width', '800px');
+    gradient.setAttribute('height', '600px`');
+    cabin.appendChild(gradient);
+    door = door.getContext('2d');
+    door.fillStyle = "#751d07";
+    door.beginPath();
+    door.moveTo(140, 600);
+    door.lineTo(140, 10);
+    door.lineTo(660, 10);
+    door.lineTo(660, 600);
+    door.lineTo(650, 600);
+    door.lineTo(650, 20);
+    door.lineTo(150, 20);
+    door.lineTo(150, 600);
+    door.lineTo(140, 600);
+    door.closePath();
+    door.fill();
+    door.beginPath();
+    door.moveTo(155, 600);
+    door.lineTo(155, 25);
+    door.lineTo(645, 25);
+    door.lineTo(645, 600);
+    door.closePath();
+    door.fill();
+}
+
 function standUp() {
-    var cabin = document.getElementById('stern');
-    var stern = cabin.getContext('2d');
-    stern.clearRect(320, 160, 300, 40);
     document.getElementById('dialogueHeader').textContent = "Tradewinds";
     addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
     removeButton('standUpButton');
