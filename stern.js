@@ -172,8 +172,10 @@ function drawLadder() {
 function climbLadder() {
     removeButton('climbLadderButton');
     addDialogue("You grasp the ladder with one gloved hand. Absentmindedly, you notice the blood smeared on it.");
-    setTimeout(function(){addDialogue("As you climb, you begin to feel light-headed, but you persevere."); drawDeck();}, 1000);
-    setTimeout(function(){addButton('headAft()', 'headAftButton', 'Head Aft');}, 1000);
+    setTimeout(function(){addDialogue("As you climb, you begin to feel light-headed, but you persevere.");}, 1000);
+    setTimeout(function(){addDialogue("When you reach the deck- WOAH."); drawDeck();}, 1500);
+    setTimeout(function(){addDialogue("Are you on... an airship?");}, 2500);
+    setTimeout(function(){addButton('headAft()', 'headAftButton', 'Head Aft');}, 5000);
 }
 
 function drawDeck() {
