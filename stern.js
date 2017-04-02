@@ -150,7 +150,7 @@ function drawLadder() {
     belowDecks.appendChild(ladder);
     ladder = document.getElementById('ladder').getContext("2d");
     ladder.fillStyle = '#459fff';
-    ladder.fillRect(100, 100, 200, 100);
+    ladder.fillRect(100, 100, 150, 100);
     ladder.fillStyle = "#751d07";
     ladder.fillRect(125, 200, 10, 400);
     ladder.fillRect(215, 200, 10, 400);
