@@ -167,5 +167,40 @@ function drawLadder() {
     gradient.setAttribute('width', '800px');
     gradient.setAttribute('height', '600px`');
     belowDecks.appendChild(gradient);
+}
+
+function climbLadder() {
+    removeButton('climbLadderButton');
+    addDialogue("You grasp the ladder with one gloved hand. Absentmindedly, you notice the blood smeared on it.");
+    setTimeout(function(){addDialogue("As you climb, you begin to feel light-headed, but you persevere."); drawDeck();}, 1000);
+    setTimeout(function(){addButton('headAft()', 'headAftButton', 'Head Aft');}, 1000);
+}
+
+function drawDeck() {
+    var active = document.getElementById('belowDecks');
+    active.style.display = 'none';
+    var main = document.getElementById('main');
+    var foreDeck = document.createElement("div");
+    foreDeck.setAttribute('id','foreDeck');
+    foreDeck = main.insertBefore(foreDeck, main.firstChild);
+    var deck = document.createElement("canvas");
+    deck.setAttribute('id', 'deck');
+    deck.setAttribute('width', '800');
+    deck.setAttribute('height', '600');
+    foreDeck.appendChild(deck);
+    deck.style.backgroundColor = '#459fff';
+    deck = document.getElementById('deck').getContext("2d");
+    deck.fillStyle = "#992305";
+    deck.fillRect(0, 500, 800, 100);
+    deck.fillRect(0, 400, 800, 10);
+    deck.fillRect(100, 400, 10, 100);
+    deck.fillRect(300, 400, 10, 100);
+    deck.fillRect(500, 400, 10, 100);
+    deck.fillRect(700, 400, 10, 100);
+    deck.fillStyle = '#9c846e';
+    deck.beginPath();
+    deck.arc(0, -24850, 25000, 0, Math.PI);
+    deck.stroke();
+    deck.fill();
 
 }
