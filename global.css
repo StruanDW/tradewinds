@@ -24,6 +24,7 @@ body {
     height: 100%;
     color: #FFF;
     float: left;
+    overflow: scroll;
 }
 
 .sunrise {
