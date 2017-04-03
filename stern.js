@@ -28,6 +28,14 @@ function addDialogue(dialogue) {
     dialogueBox.insertBefore(entry, firstDialogue);
 }
 
+function addGradientDiv(parent) {
+    var gradient = document.createElement("div");
+    gradient.classList.add('fadeToBottom');
+    gradient.setAttribute('width', '800px');
+    gradient.setAttribute('height', '600px`');
+    parent.appendChild(gradient);
+}
+
 function intro() {
     drawSunrise()
     timeouts.push(setTimeout(function(){addDialogue("Your head is throbbing...");}, 1000));
@@ -102,10 +110,7 @@ function drawDoor() {
     door.setAttribute('height', '600');
     cabin.appendChild(door);
     var gradient = document.createElement("div");
-    gradient.classList.add('fadeToBottom');
-    gradient.setAttribute('width', '800px');
-    gradient.setAttribute('height', '600px`');
-    cabin.appendChild(gradient);
+    addGradientDiv(cabin);
     door = door.getContext('2d');
     door.fillStyle = "#751d07";
     door.beginPath();
@@ -162,11 +167,7 @@ function drawLadder() {
     ladder.fillRect(125, 500, 90, 10);
     ladder.fillRect(125, 550, 90, 10);
     ladder.fillRect(125, 600, 90, 10);
-    var gradient = document.createElement("div");
-    gradient.classList.add('fadeToBottom');
-    gradient.setAttribute('width', '800px');
-    gradient.setAttribute('height', '600px`');
-    belowDecks.appendChild(gradient);
+    addGradientDiv(belowDecks);
 }
 
 function climbLadder() {
