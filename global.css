@@ -102,7 +102,7 @@ body {
 .dialogue {
     -webkit-animation: dialogueFadeIn 1s ease;
     animation: dialogueFadeIn 1s ease;
-    padding: 0 px 10 px;
+    padding: 0px 10px;
 }
 
 @keyframes dialogueFadeIn{
