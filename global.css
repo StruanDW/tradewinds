@@ -34,6 +34,7 @@ body {
 
 #dialogueHeader {
     font-size: 30px;
+    text-align: center;
 }
 
 #main {
@@ -43,6 +44,8 @@ body {
 
 #controls {
     height: 10%;
+    width: 80%;
+    float: right;
     border-top: 1px solid #333;
     position: relative;
     z-index: 2;
@@ -97,8 +100,9 @@ body {
 }
 
 .dialogue {
--webkit-animation: dialogueFadeIn 1s ease;
-animation: dialogueFadeIn 1s ease;
+    -webkit-animation: dialogueFadeIn 1s ease;
+    animation: dialogueFadeIn 1s ease;
+    padding: 0px 10px;
 }
 
 @keyframes dialogueFadeIn{
