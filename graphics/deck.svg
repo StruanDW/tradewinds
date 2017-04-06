@@ -14,6 +14,6 @@
         <rect x="500" y="400" width="10" height="100"/>
         <rect x="700" y="400" width="10" height="100"/>
     </g>
-    <circle cx="0" cy="-24850" r="25000" fill="#9c846e"
+    <circle cx="0" cy="-24850" r="25000" fill="#9c846e" stroke="black"
             clip-path="url(#canvas-clip)"/>
 </svg>
