@@ -6,7 +6,7 @@ html, body {
     overflow: hidden;
 }
 
-canvas {
+canvas, img.canvas {
     z-index: 1;
     position: fixed;
     width: 80%;
