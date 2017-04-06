@@ -17,12 +17,15 @@ function removeButton(id) {
 }
 
 function addDialogue(dialogue) {
-    var entry = document.createElement("p");
-    entry.textContent = dialogue;
-    entry.classList.add('dialogue');
-    var dialogueHeader = document.getElementById('dialogueHeader');
-    var firstDialogue = dialogueHeader.nextSibling;
-    dialogueBox.insertBefore(entry, firstDialogue);
+	timer = 0
+	if (dialogue.length == 2) { timer = dialogue[1]; }
+	dialogue = dialogue[0]
+	return(setTimeout(function(){	var entry = document.createElement("p");
+									entry.textContent = dialogue;
+									entry.classList.add('dialogue');
+									var dialogueHeader = document.getElementById('dialogueHeader');
+									var firstDialogue = dialogueHeader.nextSibling;
+									dialogueBox.insertBefore(entry, firstDialogue);}, timer));
 }
 
 function addGradientDiv(parent) {

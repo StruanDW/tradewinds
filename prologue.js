@@ -1,14 +1,16 @@
 var timeouts = [];
 var Skipped = false;
 
+var dialogue = prologueDialogue;
+
 function intro() {
     drawSunrise()
-    timeouts.push(setTimeout(function(){addDialogue("Your head is throbbing...");}, 1000));
-    timeouts.push(setTimeout(function(){addDialogue("You can hear waves, somewhere...");}, 3000));
-    timeouts.push(setTimeout(function(){addDialogue("You open your eyes, but it doesn't make a difference; there's no light.");}, 4000));
-    timeouts.push(setTimeout(function(){addDialogue("You take short breaths through your nose. Your mouth is dry.");}, 7000));
-    timeouts.push(setTimeout(function(){addDialogue("Is this what it is like to be dead?");}, 10000));
-    timeouts.push(setTimeout(function(){addDialogue("After what feels like untold ages, the sun rises, revealing... a ship's cabin?");}, 16000));
+    timeouts.push(addDialogue(dialogue[0]));
+    timeouts.push(addDialogue(dialogue[1]));
+    timeouts.push(addDialogue(dialogue[2]));
+    timeouts.push(addDialogue(dialogue[3]));
+    timeouts.push(addDialogue(dialogue[4]));
+    timeouts.push(addDialogue(dialogue[5]));
     timeouts.push(setTimeout(function(){addButton('standUp()', 'standUpButton', 'Stand');}, 20000));
 }
 
@@ -58,12 +60,11 @@ function skipIntro() {
 
 function standUp() {
     document.getElementById('dialogueHeader').textContent = "Tradewinds";
-    addDialogue('You stand, steadying yourself against the wall. The throbbing in your head remains, but you spot a canteen and take a drink.');
+    timeouts.push(addDialogue(dialogue[6]));
     removeButton('standUpButton');
-    setTimeout(function(){addDialogue("The cabin is decorated well, if spartanly. You feel the floor rocking below you as you look around, though that might be your head.");}, 1000);
-    setTimeout(function(){addDialogue("Set into the wall next to you is a wood-panelled door.");}, 2000);
+    timeouts.push(addDialogue(dialogue[7]));
     setTimeout(function(){drawDoor();}, 2000);
-    setTimeout(function(){addButton('openDoor()', 'openDoorButton', 'Open Door');}, 3000);
+	setTimeout(function(){addButton('openDoor()', 'openDoorButton', 'Open Door');}, 2000);
 }
 
 function drawDoor() {
@@ -101,9 +102,9 @@ function drawDoor() {
 
 function openDoor() {
     removeButton('openDoorButton');
-    addDialogue("The door opens easily, revealing a dark corridor. You step through, cautiously.");
-    setTimeout(function(){addDialogue("There is a ladder leading upwards towards a square of light. The rest of the corridor is shrouded in darkness."); drawLadder();}, 1000);
-    setTimeout(function(){addButton('climbLadder()', 'climbLadderButton', 'Climb');}, 1000);
+    timeouts.push(addDialogue(dialogue[8]));
+    setTimeout(function(){drawLadder();}, 1000);
+	setTimeout(function(){addButton('climbLadder()', 'climbLadderButton', 'Climb');}, 1000);
 }
 
 function drawLadder() {
@@ -137,11 +138,11 @@ function drawLadder() {
 
 function climbLadder() {
     removeButton('climbLadderButton');
-    addDialogue("You grasp the ladder with one gloved hand. Absentmindedly, you notice the blood smeared on it.");
-    setTimeout(function(){addDialogue("As you climb, you begin to feel light-headed, but you persevere.");}, 1000);
-    setTimeout(function(){addDialogue("When you reach the deck- WOAH."); drawDeck();}, 2500);
-    setTimeout(function(){addDialogue("Are you on... an airship?");}, 4000);
-    setTimeout(function(){addButton('headAft()', 'headAftButton', 'Head Aft');}, 5000);
+    timeouts.push(addDialogue(dialogue[9]));
+    timeouts.push(addDialogue(dialogue[10]));
+    timeouts.push(addDialogue(dialogue[11]));
+    timeouts.push(addDialogue(dialogue[12]));
+    setTimeout(function(){drawDeck();}, 2500);
 }
 
 function drawDeck() {
