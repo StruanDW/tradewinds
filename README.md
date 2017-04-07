@@ -2,7 +2,7 @@
 An steampunk idle game in development.
 [Go here](https://pouncysilverkitten.github.io/tradewinds) to play.
 
-[alt tag](http://i.imgur.com/wNKEbgy.jpg)
+![alt tag](http://i.imgur.com/wNKEbgy.jpg)
 
 Concept art [is here](http://imgur.com/a/6TzCv), courtesy of @tw947:guitar: on [euphoria](https://euphoria.io/room/xkcd) unless stated otherwise.
 
