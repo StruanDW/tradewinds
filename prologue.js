@@ -40,8 +40,6 @@ function drawDoor() {
     door.className = 'canvas';
     door.src = 'graphics/door.svg';
     cabin.appendChild(door);
-    var gradient = document.createElement("div");
-    addGradientDiv(cabin);
 }
 
 function openDoor() {
@@ -63,7 +61,6 @@ function drawLadder() {
     ladder.className = 'canvas';
     ladder.src = 'graphics/ladder.svg';
     belowDecks.appendChild(ladder);
-    addGradientDiv(belowDecks);
 }
 
 function climbLadder() {

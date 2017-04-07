@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0,0 800,600">
+    <defs>
+        <linearGradient id="fade-bottom" x1="0.5" y1="0" x2="0.5" y2="1">
+            <stop offset="0" stop-opacity="0"/>
+            <stop offset="1" stop-opacity="1"/>
+        </linearGradient>
+    </defs>
     <rect width="800" height="600"/>
     <rect x="100" y="100" width="150" height="100" fill="#459fff"/>
     <g fill="#751d07">
@@ -14,4 +20,5 @@
         <rect x="125" y="550" width="90" height="10"/>
         <rect x="125" y="600" width="90" height="10"/>
     </g>
+    <rect width="800" height="600" fill="url(#fade-bottom)"/>
 </svg>
