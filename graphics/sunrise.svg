@@ -1,10 +1,18 @@
 <?xml version="1.0"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0,0 800,600">
+    <defs>
+        <radialGradient id="sun" gradientUnits="userSpaceOnUse"
+                        cx="400" cy="0" r="600">
+            <stop offset="10%" stop-color="#ffffff"/>
+            <stop offset="20%" stop-color="#ffffff"/>
+            <stop offset="60%" stop-color="#459fff"/>
+        </radialGradient>
+    </defs>
     <rect width="800" height="600"/>
-    <g fill="#ffcc11">
-        <polygon points="400,200 400,300 50,300 150,200"/>
-        <polygon points="450,200 450,300 800,300 700,200"/>
-        <polygon points="400,50 400,150 175,150 275,50"/>
-        <polygon points="450,50 450,150 675,150 575,50"/>
-    </g>
+    <rect x="40" y="40" width="720" height="380" fill="url(#sun)"/>
+    <rect x="190" y="30" width="40" height="400"/>
+    <rect x="380" y="30" width="40" height="400"/>
+    <rect x="570" y="30" width="40" height="400"/>
+    <rect x="30" y="140" width="740" height="40"/>
+    <rect x="30" y="280" width="740" height="40"/>
 </svg>
