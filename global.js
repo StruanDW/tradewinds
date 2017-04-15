@@ -27,11 +27,3 @@ function addDialogue(dialogue) {
 									var firstDialogue = dialogueHeader.nextSibling;
 									dialogueBox.insertBefore(entry, firstDialogue);}, timer));
 }
-
-function addGradientDiv(parent) {
-    var gradient = document.createElement("div");
-    gradient.classList.add('fadeToBottom');
-    gradient.setAttribute('width', '800px');
-    gradient.setAttribute('height', '600px`');
-    parent.appendChild(gradient);
-}

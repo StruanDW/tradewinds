@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0,0 800,600">
+    <defs>
+        <clipPath id="canvas-clip">
+            <rect width="800" height="600"/>
+        </clipPath>
+    </defs>
+    <rect width="800" height="600" fill="#459fff"/>
+    <g fill="#992305">
+        <rect x="0" y="500" width="800" height="100"/>
+        <rect x="0" y="400" width="800" height="10"/>
+        <rect x="100" y="400" width="10" height="100"/>
+        <rect x="300" y="400" width="10" height="100"/>
+        <rect x="500" y="400" width="10" height="100"/>
+        <rect x="700" y="400" width="10" height="100"/>
+    </g>
+    <circle cx="0" cy="-24850" r="25000" fill="#9c846e" stroke="black"
+            clip-path="url(#canvas-clip)"/>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0,0 800,600">
+    <defs>
+        <linearGradient id="fade-bottom" x1="0.5" y1="0" x2="0.5" y2="1">
+            <stop offset="0" stop-opacity="0"/>
+            <stop offset="1" stop-opacity="1"/>
+        </linearGradient>
+    </defs>
+    <rect width="800" height="600"/>
+    <g fill="#751d07">
+        <polygon points="140,600 140,10 660,10 660,600 650,600 650,20 150,20 150,600 140,600"/>
+        <polygon points="155,600 155,25 645,25 645,600"/>
+    </g>
+    <rect width="800" height="600" fill="url(#fade-bottom)"/>
+</svg>
